@@ -2,7 +2,10 @@
   "name": "@lyrio/judge",
   "version": "1.0.0",
   "description": "The judge service of Lyrio",
-  "repository": "https://github.com/lyrio-dev/judge",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyrio-dev/judge.git"
+  },
   "license": "MIT",
   "author": "Menci <huanghaorui301@gmail.com>",
   "scripts": {
@@ -19,9 +22,9 @@
     }
   },
   "dependencies": {
-    "@swc-node/core": "^1.9.0",
-    "@swc-node/register": "^1.5.1",
-    "@swc/core": "^1.2.242",
+    "@swc-node/core": "^1.13.3",
+    "@swc-node/register": "^1.10.9",
+    "@swc/core": "^1.10.3",
     "agentkeepalive": "^4.2.1",
     "axios": "^0.27.2",
     "bindings": "^1.5.0",
@@ -62,7 +65,14 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-typescript": "^3.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "tailwindcss": "^3.4.17",
     "tsconfig-paths": "^4.1.0",
     "typescript": "^4.7.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/lyrio-dev/judge/issues"
+  },
+  "homepage": "https://github.com/lyrio-dev/judge#readme",
+  "main": "index.js",
+  "keywords": []
 }
