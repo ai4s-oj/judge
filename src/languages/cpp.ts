@@ -16,6 +16,8 @@ export const languageConfig: LanguageConfig<CompileAndRunOptionsCpp> = {
   compile: ({ sourcePathInside, binaryDirectoryInside, compileAndRunOptions }) => ({
     executable: compileAndRunOptions.compiler === "g++" ? "g++" : "clang++",
     parameters: [
+      "-I",
+      "/opt/vcpkg/packages/nlohmann-json_x64-linux/include/",
       "-o",
       `${binaryDirectoryInside}/a.out`,
       `-std=${compileAndRunOptions.std}`,
