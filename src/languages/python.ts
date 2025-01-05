@@ -11,6 +11,7 @@ const sourceFilename = "main.py";
 
 // This script copies the source file to the binary directory and compile it to bytecode
 const compileScript = fs.readFileSync(path.resolve(__dirname, "compile-python.sh"), "utf-8");
+const runScript = fs.readFileSync(path.resolve(__dirname, "run-python.sh"), "utf-8");
 
 export const languageConfig: LanguageConfig<CompileAndRunOptionsPython> = {
   name: "python",
@@ -30,8 +31,8 @@ export const languageConfig: LanguageConfig<CompileAndRunOptionsPython> = {
     workingDirectory: binaryDirectoryInside
   }),
   run: ({ binaryDirectoryInside, compileAndRunOptions, stdinFile, stdoutFile, stderrFile, parameters }) => ({
-    executable: `python${compileAndRunOptions.version}`,
-    parameters: [`${binaryDirectoryInside}/${sourceFilename}`, ...(parameters || [])],
+    script: runScript,
+    parameters: [`python${compileAndRunOptions.version}`, `${binaryDirectoryInside}/${sourceFilename}`, ...(parameters || [])],
     process: 20,
     stdin: stdinFile,
     stdout: stdoutFile,
